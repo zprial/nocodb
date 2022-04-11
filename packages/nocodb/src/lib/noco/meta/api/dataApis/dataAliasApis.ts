@@ -125,7 +125,10 @@ async function dataRead(req: Request, res: Response) {
 
 const router = Router({ mergeParams: true });
 
-router.get('/data/:orgs/:projectName/:tableName', ncMetaAclMw(dataList, 'dataList'));
+router.get(
+  '/data/:orgs/:projectName/:tableName',
+  ncMetaAclMw(dataList, 'dataList')
+);
 router.get(
   '/data/:orgs/:projectName/:tableName/views/:viewName',
   ncMetaAclMw(dataList, 'dataList')
